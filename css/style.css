@@ -147,7 +147,7 @@ img {
 }
 /*------------------------------ CONTENTS ------------------------------*/
 #contents {
-	min-height: 510px;
+	min-height: inherit;
 	width: 880px;
 	margin: 0 auto;
 	padding: 54px 40px;
@@ -356,6 +356,18 @@ p a {
 	font-size: 30px;
 	line-height: 36px;
 	padding: 18px 0;
+}
+figure {
+    display: inline-block;
+    border: 1px dotted gray;
+    margin: 20px; /* adjust as needed */
+}
+figure img {
+    vertical-align: top;
+}
+figure figcaption {
+    border: 1px dotted blue;
+    text-align: center;
 }
 /*------------------------------ FOOTER ------------------------------*/
 #footer {

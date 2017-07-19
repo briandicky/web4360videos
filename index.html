@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<!-- Website template by freewebsitetemplates.com -->
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -35,28 +34,51 @@
 		</div>
 	</div>
 	<div id="contents">
-		<div id="tagline" class="clearfix">
-			<h1>Overview.</h1>
-			<div>
-				<p>
-                    TBD.
-				</p>
-			</div>
-		</div>
-
-        <br></br>
-        <hr></hr>
-        <br></br>
-
-		<div id="tagline" class="clearfix">
-            <h1>Motivation.</h1>
+		<div id="post" class="clearfix">
+            <h1>
+                <b>360° Video Streaming to Head-Mounted Displays.</b>
+            </h1>
             <div>
                 <p>
-                    TBD.
+                Watching a live broadcast of an event, such as a football match or a music concert, with traditional planar televisions or monitors is a passive experience.
+                Over the past years, Virtual Reality (VR) products, such as Head-Mounted Displays (HMDs), become widely available. 
+                Many companies in the computer industry release their HMDs, such as <a href="https://www3.oculus.com/en-us/dk2" target="_blank">Oculus Rift DK2</a>, <a href="https://www.vive.com/" target="_blank">HTC Vive</a>, and <a href="http://www.samsung.com/global/galaxy/gear-vr/" target="_blank">Samsung Gear VR</a>. These products offer viewers wider Field-of-Views (FoVs) and provide more immersive experience than traditional ones.
+                Besides, lots of 360° cameras are also introduced. For instance, <a href="https://theta360.com/" target="_blank">Ricoh Theta S</a>, <a href="http://luna.camera/" target="_blank">Luna 360 VR</a>, and <a href="http://www.samsung.com/global/galaxy/gear-360/" target="_blank">Samsung Gear 360</a>. With the growing popularity of consumer VR products, viewers are able to watch 360° videos.
+                On top of that, major multimedia streaming service providers, such as <a href="https://facebook360.fb.com/" target="_blank">Facebook</a> and <a href="https://www.youtube.com/channel/UCzuqhhs6NWbgTzMuM09WKDQ" target="_blank">YouTube</a> all support 360° video streaming for VR content.
+                <br></br>
+                Nowadays, majority of global Internet traffic is due to video data <a href = "https://www.sandvine.com/trends/global-internet-phenomena/" target = "_blank" >(Global Internet Phenomena)</a>. Streaming 360° videos further increases the Internet traffic amount, and becomes a hot research topic. 
+                Leveraging commodity HMDs for 360° video streaming is, however, very challenging for two reasons. First, 360° videos, illustrated in Fig. 1(a), contain much more information than conventional videos, and thus are much larger in resolutions and file sizes. Fig. 1(b) reveals that, with HMDs, each viewer only gets to see a small part of the whole video. Therefore, sending the whole 360° video in full resolution may lead to waste of resources, such as network bandwidth, processing power, and storage space. 
+                Another way to stream 360° videos to HMDs is to only stream the current FoV of the viewers. We emphasize current, because the FoV changes as the viewer’s head and eyes move, which leads to the following main challenge: which FoV should we transfer to meet the viewer’s needs in the next moment? This challenge makes designing a real-time 360° video streaming system to HMDs quite tricky, especially because most video streaming solutions nowadays deliver videos in segments lasting for a few seconds.
                 </p>
+               
+                <div style="display: flex; width: 100%; height: 250px; justify-content: space-around">
+                    <p style="float: left; text-align: center; width: 55%; margin-bottom: 0.5em;"><img src="images/landscape_equir_00567.jpg" style="height: 100%;"/>Figure 1: (a) 360° videos contain much more information than regular videos.</p>
+                    <p style="float: left; text-align: center; width: 30%; margin-bottom: 0.5em;"><img src="images/watch_part_of_360video.jpg" style="height: 100%;"/>Figure 1: (b) viewer only sees a small part of the 360° video.</p>
+                </div>
             </div>
 		</div>
 	</div>
+
+    <div id="contents">
+        <div id="post" class="clearfix">
+            <h1>
+                <b>Goals and Overview</b>
+            </h1>
+
+            <ul>
+                <li>Design and develop a tile-based 360° video streaming system with viewers using HMDs</li>
+                <li>Train and fine-tune new algorithms for 360° video streaming (e.g., viewed tile prediction algorithms)</li>
+                <li>Collect a 360° video viewing Dataset, which contains content and sensor data, with viewers using HMDs</li>
+                <li>New Quality-of-Experience (QoE) metrics designed for 360° video streaming to HMDs</li>
+                <li>Optimal bitrate allocation algorithm for 360° video streaming</li>
+                <li>Rate-Distortion (R-D) optimization for 360° video streaming to HMDs</li>
+            </ul>
+            <p>
+                <a href="research.html">View details »</a>
+            </p>
+        </div>
+    </div>
+
     <div id="footer" align="center">
         <p style="margin-bottom: 0px">
         © 2017 NMSL@NTHU. All Rights Reserved.
