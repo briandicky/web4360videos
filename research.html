@@ -35,21 +35,86 @@
 		</div>
 	</div>
 	<div id="contents">
+        <h1>
+            <b>Research Activities</b>
+        </h1>
 		<div class="post">
 			<div class="date">
 				<p>
-					<span>03</span>
-					2023
+					<span>06</span>
+					2017
 				</p>
 			</div>
-			<h1>Updates: More Features Released <span class="author">Brian Ferry March 2012</span></h1>
-			<p>
-				You can replace all this text with your own text. Want an easier solution for a Free Website? Head straight to Wix and immediately start customizing your website! Wix is an online website builder with a simple drag & drop interface, meaning you do the work online and instantly publish to the web. All Wix templates are fully customizable and free to use. Just pick one you like, click Edit, and enter the online editor.
-			</p>
+            <h3>360° Video Viewing Dataset in Head-Mounted Virtual Reality<span class="author">by Wec-Chih</span></h3>
+            <p style="margin: 0px;">
+                Using conventional displays to watch 360° videos is often less intuitive, while recently released HMDs, such as Oculus Rift, HTC Vive, Samsung Gear VR, offer wider Field-of-Views (FoVs) and thus more immersive experience.
+                <!--While service providers like YouTube and Facebook, have put some 360° videos online, streaming these videos to HMDs is extremely challenging.-->
+                <!--One of the challenges is that 360° videos are in very high resolution, such as 4K, 8K, and higher.-->
+                <!--When watching a 360° video, a viewer wearing an HMD rotates his/her head to change the viewing orientation, which can be described by the angles along the x, y, and z axes.-->
+                <!--These three angles are called yaw, pitch, and roll. Based on the orientation, the HMD displays the current FoV, which is a fixed-size region, say 100°x100° circle. -->
+            Since a viewer never sees a whole 360° video, streaming the 360° video in its full resolution wastes resources, including bandwidth, storage, and computation.
+            Therefore, each 360° video is often split into grids of sub-images, called tiles. 
+            With tiles, an optimized 360° video streaming system to HMDs would strive to stream only those tiles that fall in the viewer’s FoV. 
+            
+            <!--By doing so, the system satisfies the viewer’s needs and consumes less resources than streaming the whole video at its full resolution.-->
+            However, getting to know each viewer’s FoVs at any moment of every 360° video is not an easy task. 
+            <!--The complex interplay among too many factors increases the difficulty.-->
+            <!--More specifically, both content (360° videos) and sensors (HMDs worn by viewers) affect the viewers’ FoVs in the future moments.-->
+            <!--Hence, to better address the challenge, a large set of the content and sensor data from viewers watching 360° videos with HMDs is crucial.-->
+            To better address the challenge, a large set of the content and sensor data from viewers watching 360° videos with HMDs is crucial.
+
+            <div style="display: flex; justify-content: space-around; margin-top: 0px;">
+                <video width="300" height="225" controls>
+                    <source src="videos/480p_mega_coaster.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <video width="300" height="225" controls>
+                    <source src="videos/480p_coaster_saliency_10s.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <video width="300" height="225" controls>
+                    <source src="videos/480p_coaster_motion_10s.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <br></br>
+
+            To overcome such limitation, and promote reproducible research, we build up our own 360° video testbed for collecting traces from real viewers watching 360° videos using HMDs. 
+            <!--We then use the testbed to collect content and sensor dataset.-->
+            <a href="http://dl.acm.org/citation.cfm?id=3083219" >The resulting dataset</a> can be used to, for example, predict which parts of 360° videos attract viewers to watch the most. The dataset, however, can also be leveraged in various novel applications in a much broader scope.
+            <!--For example, using our dataset, content provider could get to compute the most common FoVs among viewers, and derive the crowd-driven camera movements, which may be used to guide viewers through 360° videos via innovative user interfaces.-->
+            <!--Deeper investigations could even identify the essential elements for gaining viewers’ attentions in 360° videos streamed to HMDs.-->
+            </p>
 		</div>
+
+        <hr></hr>
+
+        <div class="post">
+            <div class="date">
+                <p>
+                <span>06</span>
+                2017
+                </p>
+            </div>
+            <h3>Fixation Prediction for 360° Video Streaming<span class="author">Wec-Chih 2017</span></h3>
+            <p style="margin: 0px;">
+            Leveraging commodity HMDs for 360° video streaming is, however, very challenging for two reasons. 
+            First, 360° videos contain much more information than conventional videos, and thus are much larger in resolutions and file sizes.
+            With HMDs, each viewer only gets to see a small part of the whole video. 
+            Therefore, sending the whole 360° video in full resolution may lead to waste of resources, such as network bandwidth, processing power, and storage space.
+            Another way to stream 360° videos to HMDs is to only stream the current FoV of the viewer. 
+            We emphasize current, because the FoV changes as the viewer’s head and eyes move, which leads to the following main challenge: which FoV should we transfer to meet the viewer’s needs in the next moment.
+            </p>
+        </div>
+
 	</div>
+
+
 	<div id="footer" align="center">
-		<p>
+		<p style="margin-bottom: 0px">
 			© 2017 NMSL@NTHU. All Rights Reserved.
 		</p>
 	</div>
