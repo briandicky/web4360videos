@@ -84,10 +84,12 @@
 
             To overcome such limitation, and promote reproducible research, we build up our own 360° video testbed for collecting traces from real viewers watching 360° videos using HMDs. 
             <!--We then use the testbed to collect content and sensor dataset.-->
-            <a href="http://dl.acm.org/citation.cfm?id=3083219" >The resulting dataset</a> can be used to, for example, predict which parts of 360° videos attract viewers to watch the most. The dataset, however, can also be leveraged in various novel applications in a much broader scope.
+            <a href="download.html" >The resulting dataset</a> can be used to, for example, predict which parts of 360° videos attract viewers to watch the most. The dataset, however, can also be leveraged in various novel applications in a much broader scope.
             <!--For example, using our dataset, content provider could get to compute the most common FoVs among viewers, and derive the crowd-driven camera movements, which may be used to guide viewers through 360° videos via innovative user interfaces.-->
             <!--Deeper investigations could even identify the essential elements for gaining viewers’ attentions in 360° videos streamed to HMDs.-->
+            &nbsp;<a href="http://dl.acm.org/citation.cfm?id=3083219">View details »</a>
             </p>
+
 		</div>
 
         <hr></hr>
@@ -99,7 +101,7 @@
                 2017
                 </p>
             </div>
-            <h3>Fixation Prediction for 360° Video Streaming<span class="author">Wec-Chih 2017</span></h3>
+            <h3>Fixation Prediction for 360° Video Streaming<span class="author">by Wec-Chih</span></h3>
             <p style="margin: 0px;">
             Leveraging commodity HMDs for 360° video streaming is, however, very challenging for two reasons. 
             First, 360° videos contain much more information than conventional videos, and thus are much larger in resolutions and file sizes.
@@ -108,10 +110,82 @@
             Another way to stream 360° videos to HMDs is to only stream the current FoV of the viewer. 
             We emphasize current, because the FoV changes as the viewer’s head and eyes move, which leads to the following main challenge: which FoV should we transfer to meet the viewer’s needs in the next moment.
             </p>
+
+            <div style="display: flex; justify-content: space-around;">
+                <figure>
+                    <img src="images/fixa_archi.jpg">
+                    <figcaption>Figure 2: Overview of the proposed 360° video streaming server. A tile streaming example is shown.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/fixa_sphere_coord2.jpg">
+                    <figcaption>Figure 3: The FoV model.</figcaption>
+                </figure>
+            </div>
+
+            <p>
+                Fig. 2 presents our proposed architecture of a 360° streaming server, in which we focus on the software components related to fixation prediction. 
+                We have identified two types of content-related features: <a href="https://arxiv.org/abs/1411.5878">image saliency map</a>, <a href="http://www.sciencedirect.com/science/article/pii/S0923596516301667">motion map</a>, and sensor-related features, such as orientations and angular speed, from HMDs.
+                The video frames are sent to the image saliency network and motion feature detector for generating the image saliency map and the motion map, respectively. 
+                Generating these two maps is potentially resource demanding, and we assume that they are created offline for pre-recorded videos. 
+                Fig. 3 presents the FoV model of HMDs. The viewer stands at the center of the sphere. Let α and β be the yaw and pitch, which are reported from the sensors equipped by HMDs.
+                The HMD sensor data are transmitted to the orientation extractor to derive the viewer orientations. 
+                The feature buffer maintains a sliding window that stores the latest image saliency maps, motion maps, and viewer orientations as the inputs of fixation prediction network. 
+                The video fixation prediction network predicts the future viewing probability of each tile. The tile rate selector optimally selects the rates of the encoded video tiles.
+                &nbsp;<a href="http://dl.acm.org/citation.cfm?id=3083180">View details »</a>
+            </p>
         </div>
 
-	</div>
+        <hr></hr>
 
+        <div class="post">
+            <div class="date">
+                <p>
+                <span>07</span>
+                2017
+                </p>
+            </div>
+            <h3>Performance Measurements of 360° Video Streaming to HMDs over 4G Cellular Networks<span class="author">by Wec-Chih</span></h3>
+            <p style="margin: 0px;">
+            Streaming 360° videos further increases the Internet traffic amount.
+            In particular, streaming videos coded in 4K or higher resolutions leads to insufficient bandwidth and overloaded decoder. As shown in
+            Fig. 4, when watching 360° videos, a viewer wearing an HMD rotates his/her head to actively change the viewing orientation. 
+            Viewing orientation can be described by yaw, pitch, and roll, which correspond to rotating along x, y, and z axes. 
+            A viewer with HMD only gets to see a small part of the whole video. 
+            Most of the 360° videos won’t be viewed by a viewer, and thus streaming the whole 360° videos may be unnecessary.
+            </p>
+
+            <div style="display: flex; justify-content: space-around;">
+                <figure>
+                    <img src="images/apnoms_view_fov.png">
+                    <figcaption>Figure 4: A viewer watches a part of whole 360° video with an HMD.</figcaption>
+                </figure>
+            </div>
+
+            <p style="margin: 0px;">
+            To solve this problem, Fig. 5 shows that a video is split into tiles of sub-videos, which are then encoded by <a href="http://ieeexplore.ieee.org/document/6375943/">HEVC (High Efficiency Video Coding)</a> codec into video bitstreams. 
+            Then, we stream them using <a href="http://dl.acm.org/citation.cfm?doid=1943552.1943572">MPEG Dynamic Adaptive Streaming over HTTP (DASH)</a>, an adaptive streaming technology for delivering
+            videos over the Internet. 
+            For DASH streaming systems, each tile is encoded into multiple versions at different bitrates. 
+            This provides the ability for a client to switch among different bitrates or quality levels. 
+            Having multiple tiles allows each client to only request and decode those tiles that will be watched, in order to conserve resources. 
+            However, splitting a video into tiles may reduce the coding efficiency, compared to a single non-tiled video.
+            </p>
+
+            <div style="display: flex; justify-content: space-around;">
+                <figure>
+                    <img src="images/apnoms_preprocessing.jpg">
+                    <figcaption>Figure 5: Overview of the pre-processing procedure of our 360° video streaming platform.</figcaption>
+                </figure>
+            </div>
+
+            <p>
+            Therefor, we design several experiments for quantifying the performance of 360° video streaming over a real cellular network on our campus. 
+            In particular, we investigate diverse impacts of tile streaming over 4G networks, such as the coding efficiency, the potential of saving bandwidth, and the number of the supportable clients. 
+            Our experiments make several interesting findings, for example, (i) only streaming the tiles viewed by the viewer achieves bitrate reduction by up to 80%, and (ii) the coding efficiency of 3x3 tiled videos may be higher than non-tiled videos at higher bitrates.
+            &nbsp;<a href="">View details »</a>
+            </p>
+        </div>
+	</div>
 
 	<div id="footer" align="center">
 		<p style="margin-bottom: 0px">
