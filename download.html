@@ -34,20 +34,50 @@
 			</ul>
 		</div>
 	</div>
+
     <div id="contents">
-        <div class="post">
-            <div class="date">
-                <p>
-                    <span>06</span>
-                    2017
-                </p>
-            </div>
-            <h1>Updates: More Features Released <span class="author">MosQuito June 2017</span></h1>
-                <p>
-            You can replace all this text with your own text. Want an easier solution for a Free Website? Head straight to Wix and immediately start customizing your website! Wix is an online website builder with a simple drag &amp; drop interface, meaning you do the work online and instantly publish to the web. All Wix templates are fully customizable and free to use. Just pick one you like, click Edit, and enter the online editor.
-                </p>
-        </div>
+        <h1>
+            <b>360° Video Viewing Dataset</b>
+        </h1>
+        <p style="margin: 0px;">
+        This <a href="https://nmsl.cs.nthu.edu.tw/dropbox/360dataset.zip">dataset</a> consists of the content (10 videos from YouTube) and sensory data (50 subjects) of 360-degree videos to HMD.
+            <ul>
+                The folder information:
+                <li><b>Saliency</b>: contains the videos with the saliency map of each frame based on <a href="https://arxiv.org/abs/1609.01064">Cornia's work</a>, where the saliency maps indicate the attraction level of the original video frame.</li>
+
+                <li><b>Motion</b>: contains the videos with the optical flow analyzed from each consecutive frames, where the optical flow indicates the relative motions between the objects in 360-degree videos and the viewer.</li>
+
+                <li><b>Raw</b>: contains the raw sensing data (raw x, raw y, raw z, raw yaw, raw roll, and raw pitch) with timestamps captured when the viewers are watching 360-degree videos using <a href="https://github.com/opentrack/opentrack">OpenTrack</a>.</li>
+
+                <li><b>Orientation</b>: contains the orientation data (raw x, raw y, raw z, raw yaw, raw roll, and raw pitch), which have been aligned with the time of each frame of the video. The calibrated orientation data (cal. yaw, cal. pitch, and cal. roll) are provided as well.</li>
+
+                <li><b>Tile</b>: contains the tile numbers overlapped with the Field-of-View (FoV) of the viewer according to the orientation data, where the tile size is 192x192. Knowing the tiles that are overlapped with the FoV of the viewer is useful for optimizing 360-degree video to HMD streaming system, for example, the system can only stream those tiles to reduce the required bandwidth or allocate higher bitrate to those tiles for better user experience.</li>
+            </ul>
+        </p>
+
+        <hr></hr>
+
+        <h1>
+            <b>External links</b>
+        </h1>
+        <p style="margin: 0px;">
+            <ul>
+                <li>OpenTrack</li>
+                <li>Kvazaar</li>
+                <li>MP4Client</li>
+                <li>MP4Box</li>
+                <li>Keras</li>
+                <li>Oculus Video</li>
+                <li>Facebook Transform360</li>
+                <li>xmar/360Transformations</li>
+                <li>GamingAnywhere</li>
+                <li>Lucas-Kanade optical flow</li>
+                <li>V-PSNR</li>
+                <li>S-PSNR</li>
+            </ul>
+        </p>
     </div>
+
     <div id="footer" align="center">
         <p style="margin-bottom: 0px">
         © 2017 NMSL@NTHU. All Rights Reserved.
