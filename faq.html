@@ -1,64 +1,99 @@
 <!DOCTYPE HTML>
 <!-- Website template by freewebsitetemplates.com -->
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Networking and Multimedia Systems Lab</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-<body>
-	<div id="header">
-		<div>
-			<div class="logo">
-				<a href="index.html">NMSL@NTHU</a>
-			</div>
-			<ul id="navigation">
-				<li>
-					<a href="index.html">Home</a>
-				</li>
-                <li>
-                    <a href="research.html">Research</a>
-                </li>
-				<li>
-					<a href="document.html">Document</a>
-				</li>
-				<li>
-					<a href="download.html">Download</a>
-				</li>
-				<li class="active">
-					<a href="faq.html">FAQ</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div id="contents">
-		<div id="about">
-			<h1>About</h1>
-			<h2>We Have Free Templates for Everyone</h2>
-			<p>
-				Our website templates are created with inspiration, checked for quality and originality and meticulously sliced and coded. What's more, they're absolutely free! You can do a lot with them. You can modify them. You can use them to design websites for clients, so long as you agree with the <a href="http://www.freewebsitetemplates.com/about/terms/">Terms of Use</a>. You can even remove all our links if you want to.
-			</p>
-			<h2>We Have More Templates for You</h2>
-			<p>
-				Looking for more templates? Just browse through all our <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> and find what you're looking for. But if you don't find any website template you can use, you can try our <a href="http://www.freewebsitetemplates.com/freewebdesign/">Free Web Design</a> service and tell us all about it. Maybe you're looking for something different, something special. And we love the challenge of doing something different and something special.
-			</p>
-			<h2>Be Part of Our Community</h2>
-			<p>
-				If you're experiencing issues and concerns about this website template, join the discussion <a href="http://www.freewebsitetemplates.com/forums/">on our forum</a> and meet other people in the community who share the same interests with you.
-			</p>
-			<h2>Template details</h2>
-			<p>
-				Design version 9<br> Code version 3<br> Website Template details, discussion and updates for this <a href="http://www.freewebsitetemplates.com/discuss/zerotype/">Zerotype Website Template</a>.<br> Website Template design by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a>.<br> Please feel free to remove some or all the text and links of this page and replace it with your own About content.
-			</p>
-		</div>
-	</div>
-	<div id="footer" align="center">
-		<p style="margin-bottom: 0px">
-			© 2017 NMSL@NTHU. All Rights Reserved.
-		</p>
-	</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Networking and Multimedia Systems Lab</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+        <div id="header">
+            <div>
+                <div class="logo">
+                    <a href="index.html">NMSL@NTHU</a>
+                </div>
+                <ul id="navigation">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="research.html">Research</a>
+                    </li>
+                    <li>
+                        <a href="document.html">Document</a>
+                    </li>
+                    <li>
+                        <a href="download.html">Download</a>
+                    </li>
+                    <li class="active">
+                        <a href="faq.html">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="contents">
+            <h1>
+                <b>Frequently Asked Questions</b>
+            </h1>
+            <ul>
+                <img src="images/q_30x30.jpg"> Please, can you share with me the link to download the 360° Video Viewing Dataset (MMSys’17 paper)?
+                <br></br>
+                <img src="images/a_30x30.jpg"> The dataset is available online at <a href="https://nmsl.cs.nthu.edu.tw/dropbox/360dataset.zip">here</a>.
+                <hr></hr>
+                <br></br>
+
+                <img src="images/q_30x30.jpg"> In your experiments, do you give the subjects enough space to turn around?
+                <br></br>
+                <img src="images/a_30x30.jpg"> In our experiments, all subjects are told to stand and given enough space to turn around when using HMD.
+                <hr></hr>
+                <br></br>
+
+                <img src="images/q_30x30.jpg"> What is the shape of Field-of-View (FoV) you measured?
+                <br></br>
+                <img src="images/a_30x30.jpg"> We mentioned that the HMD (Oculus Rift DK2) displays the current FoV, which is a fixed-size region, say 100x100 circle.
+                <hr></hr>
+                <br></br>
+
+                <img src="images/q_30x30.jpg"> How do you generate the tiles, such as 192x192, 240x240 ,and 320x320?
+                <br></br>
+                <img src="images/a_30x30.jpg"> For all 360 videos, we divide each frame using H.264/AVC, which is mapped in equirectangular model, into 192x192 tiles, so there are 200 tiles in total. Then we number the tiles from upper-left to lower-right.
+                <hr></hr>
+                <br></br>
+
+                <img src="images/q_30x30.jpg"> It is unclear why saliency map and motion map should be part of dataset itself. Can they be used to guarantee accurate timing between the dataset and origin data?
+                <br></br>
+                <img src="images/a_30x30.jpg"> The image saliency map that identifies the objects attracting the viewers’ attention the most and the motion map that high-lights the moving objects. We use both content and sensor data in our proposed fixation prediction network, a tile-based 360° video streaming server.
+                <hr></hr>
+                <br></br>
+
+                <img src="images/q_30x30.jpg"> Saliency maps are computed based on equirectangular images using a classical image-based saliency mapping approach, there is no research that indicates this can be done. For CubeMap images it might not achieve same results using same saliency mapping software.
+                <br></br>
+                <img src="images/a_30x30.jpg"> There is no research that indicates the performance of the pre-trained CNNs using saliency map based on different projection models, such as equirectangular, cube and rhombic dodecahedron. A improved projection mechanism can be designed to mitigate the shape distortion caused by current projection models of 360° videos. It can make current saliency detection techniques more applicable for 360° videos.
+                <hr></hr>
+                <br></br>
+
+                <img src="images/q_30x30.jpg"> How many public 360° videos datasets in the literature and what special features they have?
+                <br></br>
+                <img src="images/a_30x30.jpg"> To our best knowledge, there are 4 360° videos datasets have been published in ACM Multimedia Systems 2107 (MMSys'17). Here is the overview of each dataset, each of them contains different features.
+                <img src="images/dataset_overview.jpg" style="margin-left: 200px;">
+                <hr></hr>
+            </ul>
+
+            <br></br>
+
+            <p>
+            We need your helps and participate to improve our systems and algorithms. Please do not hesitate to <a href="contact.html">contact us</a> by sending an email. We will respond as fast as we can. Thank you. :)
+            </p>
+        </div>
+
+        <div id="footer" align="center">
+            <p style="margin-bottom: 0px">
+            © 2017 NMSL@NTHU. All Rights Reserved.
+            </p>
+        </div>
+    </body>
 </html>
+
